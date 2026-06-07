@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -42,6 +43,8 @@ INSTALLED_APPS = [
     'apps.users',
     'apps.orders',
     'apps.products',
+
+    'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [
@@ -120,3 +123,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+
+
+# Brauzer orqali rasmlarga kirish uchun URL prefiksi
+MEDIA_URL = '/media/'
+
+# Rasmlar kompyuter xotirasida (serverda) aynan qayerda saqlanishi
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
