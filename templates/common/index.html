@@ -107,7 +107,7 @@
         <div class="row g-3">
             {% for category in categories|slice:":6" %}
             <div class="col-6 col-md-4 col-lg-2">
-                <a href="#" class="text-decoration-none">
+                <a href="{% url 'category_products' category.id %}" class="text-decoration-none">
                     <div class="category-card card h-100 text-center p-3 border-0 shadow-sm">
                         <div class="icon mb-2">{{ category.icon | safe }}</div>
                         <div class="fw-semibold small">{{ category.name }}</div>
