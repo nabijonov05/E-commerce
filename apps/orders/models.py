@@ -4,12 +4,7 @@ from django.contrib.auth.models import *
 # Create your models here.
 class Order(models.Model):
 
-    STATUS_CHOICES = [
-        ('pending', 'Kutilmoqda'),
-        ('delivered', 'Yetkazildi'),
-        ('cancelled', 'Bekor qilindi'),
-    ]
-
+    status = models.CharField(max_length=20, default='pending')
     full_name = models.CharField(max_length=200)
     phone = models.CharField(max_length=100)
     address = models.TextField()
