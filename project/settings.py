@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'drf_spectacular',
+
     'apps.common',
     'apps.users',
     'apps.orders',
@@ -108,6 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     # "DEFAULT_PERMISSION_CLASSES": [
@@ -140,3 +143,11 @@ MEDIA_URL = '/media/'
 
 # Rasmlar kompyuter xotirasida (serverda) aynan qayerda saqlanishi
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Mening API Loyiham',
+    'DESCRIPTION': 'Loyihaning API hujjatlari va tavsifi',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    # Agar loyihada token yoki JWT bo'lsa, ularni bu yerda sozlash mumkin
+}
