@@ -1,13 +1,13 @@
 from django.urls import path
-from apps.orders.api_endpoints.orders.OrderList.views import order_list
-from apps.orders.api_endpoints.orders.OrderCreate.views import order_create_view
-from apps.orders.api_endpoints.orders.OrderDetail.views import order_detail_view
-from apps.orders.api_endpoints.orders.OrderUpdateDestroy.views import order_update_destroy_view
+from apps.orders.api_endpoints.orders.OrderList.views import OrderListAPIView
+from apps.orders.api_endpoints.orders.OrderCreate.views import OrderCreateAPIView
+from apps.orders.api_endpoints.orders.OrderDetail.views import OrderDetailAPIView
+from apps.orders.api_endpoints.orders.OrderUpdateDestroy.views import OrderUpdateAPIView, OrderDestroyAPIview
 
 urlpatterns = [
-    path('orders/', order_list, name='order_list'),
-    path('create/', order_create_view, name='order-create'),
-    path('<int:pk>/', order_detail_view, name='order-detail'),
-    path('<int:pk>/update/', order_update_destroy_view, name='order-update'),
-    path('<int:pk>/delete/', order_update_destroy_view, name='order-delete'),
+    path('orders/', OrderListAPIView.as_view(), name='order_list'),
+    path('create/', OrderCreateAPIView.as_view(), name='order-create'),
+    path('<int:pk>/', OrderDetailAPIView.as_view(), name='order-detail'),
+    path('<int:pk>/update/', OrderUpdateAPIView.as_view(), name='order-update'),
+    path('<int:pk>/delete/', OrderDestroyAPIview.as_view(), name='order-delete'),
 ]
