@@ -12,6 +12,6 @@ from apps.products.models import Category
 #     serializer = CategoryListSerializer(categories, many=True)
 #     return Response(serializer.data)
 
-class CategorCreateAPIView(ListAPIView):
+class CategorListAPIView(ListAPIView):
     queryset = Category.objects.all()
     serializer_class = CategoryListSerializer

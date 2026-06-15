@@ -25,10 +25,10 @@ from apps.products.models import Category
 #         return Response(status=204)
 
 
-class CategorCreateAPIView(UpdateAPIView):
+class CategorUpdateAPIView(UpdateAPIView):
     queryset = Category.objects.all()
     serializer_class = CategoryUpdateDestroySerializer
 
-class CategorCreateAPIView(DestroyAPIView):
+class CategorDestroyAPIView(DestroyAPIView):
     queryset = Category.objects.all()
     serializer_class = CategoryUpdateDestroySerializer

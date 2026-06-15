@@ -16,6 +16,6 @@ from apps.products.models import Category
 #     serializer = CategoryDetailSerializer(category)
 #     return Response(serializer.data)
 
-class CategorCreateAPIView(RetrieveAPIView):
+class CategorDetailAPIView(RetrieveAPIView):
     queryset = Category.objects.all()
     serializer_class = CategoryDetailSerializer
