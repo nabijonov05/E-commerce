@@ -6,7 +6,7 @@ from apps.products.models import Product
 
 
 @api_view(['GET'])
-def product_detail_view(request, pk):
+def product_detail(request, pk):
     try:
         product = Product.objects.get(pk=pk)
     except Product.DoesNotExist:

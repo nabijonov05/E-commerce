@@ -6,7 +6,7 @@ from apps.orders.models import Order
 
 
 @api_view(['POST'])
-def product_create_view(request):
+def product_create(request):
     serializer = ProductCreateSerializer(data=request.data)
     if serializer.is_valid():
         product = serializer.save()

@@ -6,7 +6,7 @@ from apps.products.models import Product
 
 
 @api_view(['PATCH', 'DELETE'])
-def product_update_destroy_view(request, pk):
+def product_update_destroy(request, pk):
     try:
         product = Product.objects.get(pk=pk)
     except Product.DoesNotExist:
